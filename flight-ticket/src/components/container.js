@@ -1,4 +1,4 @@
-import { containerElement } from "../templates/container.js"
+import { containerElement } from "../templates/container"
 
 class Container extends HTMLElement {
     constructor(){

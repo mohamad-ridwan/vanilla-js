@@ -1,5 +1,5 @@
-const { fetchData } = require("../../services/api")
-const { airlinesURL } = require("../../services/base-url")
+import { airlinesURL } from "../../services/base-url"
+
 
 class FlightTicket {
     // private field

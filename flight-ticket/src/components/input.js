@@ -1,6 +1,13 @@
 import { inputElement } from '../templates/input.js'
 import { withTwind } from '../utils/with-twind.js'
+import { ticketBookingContainer } from './ticket-booking.js'
 import { ticketSearch } from './ticket-search.js'
+
+const formBooking = [
+    'firstname',
+    'lastname',
+    'title'
+]
 
 class TextInput extends withTwind(HTMLElement) {
     constructor() {
@@ -13,6 +20,9 @@ class TextInput extends withTwind(HTMLElement) {
         this.shadowRoot.querySelector('input').placeholder = this.getAttribute('placeholder')
 
         ticketSearch.searchTicket(this.shadowRoot)
+        formBooking.forEach(name=>{
+            ticketBookingContainer.changeInput(this.shadowRoot, name)
+        })
     }
 }
 

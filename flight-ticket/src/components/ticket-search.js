@@ -1,6 +1,5 @@
 import { flightTicket } from "../features/pages"
 import { ticketSearchElement } from "../templates/ticket-search"
-import { ticketLists } from "./ticket-lists"
 
 class TicketSearch extends HTMLElement {
     constructor() {
@@ -16,7 +15,7 @@ class TicketSearch extends HTMLElement {
             const tickets = flightTicket.ticketData().filter(item =>
                 item.title.toLowerCase().includes(value.toLowerCase())
             )
-            ticketLists.getTicketLists(tickets)
+            flightTicket.updateSearchTicket(tickets)
         })
     }
 }

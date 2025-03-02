@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Booking</title>
 </head>
+
 <body>
-    <container-page>
-        <header-card value="Booking Tickets"></header-card>
-        <text-input 
-        name="firstname" 
-        type="text" 
-        placeholder="Your First Name..."
-        ></text-input>
-        <text-input 
-        name="lastname" 
-        type="text" 
-        placeholder="Your Last Name..."
-        ></text-input>
-    </container-page>
-    <script src="../../dist/bundle.js"></script>
+    <ticket-booking-container>
+        <container-page>
+            <header-card value="Booking Tickets"></header-card>
+            <text-input name="firstname" type="text" placeholder="Your First Name..."></text-input>
+            <text-input name="lastname" type="text" placeholder="Your Last Name..."></text-input>
+            <text-input name="title" type="text" placeholder="Departure..."></text-input>
+            <button-card name="booking-ticket" value="Booking Ticket"></button-card>
+            <ticket-lists id="ticket-lists"></ticket-lists>
+        </container-page>
+    </ticket-booking-container>
 </body>
+
 </html>

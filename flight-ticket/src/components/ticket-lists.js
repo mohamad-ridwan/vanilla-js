@@ -11,27 +11,8 @@ class TicketLists extends withTwind(HTMLElement) {
         this.shadowRoot.querySelector('div').id = this.getAttribute('id')
     }
 
-    async getTicketLists(ticket) {
-        const ticketData = ticket ?? await flightTicket.getTicket()
-        const ticket_lists = document.querySelector('#ticket-lists')
-        ticket_lists.style.display = 'flex'
-        ticket_lists.innerHTML = ''
-        ticketData.forEach((item) => {
-            ticket_lists.innerHTML += `
-            <div style="position: relative; margin: 20px 0; display: flex;">
-                <ticket-card title="${item.title}"></ticket-card>
-            </div>`
-        })
-        if(ticketData.length === 0){
-            ticket_lists.innerHTML = `
-            <div style="position: relative; margin: 20px 0; display: flex;">
-                <p>Ticket not found</p>
-            </div>`
-        }
-    }
-
     connectedCallback() {
-        this.getTicketLists()
+        flightTicket.getTicket()
     }
 }
 

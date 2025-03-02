@@ -1,4 +1,4 @@
-const airlinesURL = 'https://freetestapi.com'
+const airlinesURL = 'https://dummyjson.com'
 
 export {
     airlinesURL

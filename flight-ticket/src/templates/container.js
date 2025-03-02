@@ -1,6 +1,6 @@
 const containerElement = document.createElement('template')
 containerElement.innerHTML = `
-    <link rel="stylesheet" href="../../styles/components/container.css">
+    <link rel="stylesheet" href="../styles/components/container.css">
     <div class="container">
         <div class="center-container">
             <slot/>

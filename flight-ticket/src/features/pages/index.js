@@ -1,5 +1,5 @@
+import { fetchData } from "../../services/api"
 import { airlinesURL } from "../../services/base-url"
-
 
 class FlightTicket {
     // private field
@@ -15,11 +15,16 @@ class FlightTicket {
     }
 
     async getTicket() {
-        const result = await fetchData(`${airlinesURL}/api/v1/airlines`)
-        if (result?.length) {
-            this.#ticket = result
-            return
+        const result = await fetchData(`${airlinesURL}/products`)
+        if (result?.products?.length) {
+            this.#ticket = result.products
+            return result.products
         }
+        return []
+    }
+
+    ticketData() {
+        return this.#ticket
     }
 }
 
